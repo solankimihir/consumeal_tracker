@@ -36,7 +36,7 @@ class _AddNewMealState extends State<AddNewMeal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text("A D D    E X P E N S E")),
+        title: const Center(child: Text("A D D    M E A L")),
       ),
       body: Container(
         margin: const EdgeInsets.all(20),
