@@ -7,5 +7,5 @@ A new Flutter project.
 This is a project that helps you in keeping track of the meals consumed.
 
 Screenshots:
-![Home Page](/Screenshots/HomePage.png?raw=true "Home Page")
-![Add Meal Page](/Screenshots/AddMealPage.png?raw=true "Add Meal Page")
+![Home Page](/screenshots/HomePage.png?raw=true "Home Page")
+![Add Meal Page](/screenshots/AddMealPage.png?raw=true "Add Meal Page")
