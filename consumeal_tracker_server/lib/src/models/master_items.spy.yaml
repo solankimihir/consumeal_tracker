@@ -1,0 +1,8 @@
+class: MasterItems
+table: master_items
+
+fields:
+  name: String          #Name of the item
+  unit: String          #Measurement unit for item : Cups/Nos./Pieces
+  calories: double      #Calories in the item
+  

@@ -1,0 +1,9 @@
+#Meals Consumed
+class: Meals
+table: meals
+
+fields:
+    datetimestamp: DateTime
+    name: String
+    remarks: String             #Remarks for the meal as a whole
+    tag: List<String>           #Tags for the meal

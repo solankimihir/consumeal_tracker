@@ -1,0 +1,11 @@
+#Items consumed in a meal
+class: ItemsInAMeal
+table: items_in_a_meal
+
+fields:
+    mealID: Meals?, relation
+    itemID: MasterItems?, relation
+    quantity: double
+    remarks: String
+    calories: int
+    tags: List<String>
