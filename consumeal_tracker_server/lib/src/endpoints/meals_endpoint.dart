@@ -29,6 +29,15 @@ class MealsEndpoint extends Endpoint {
       await MasterItems.db.deleteRow(session, itemToBeDeleted);
 
   //CRUD for Meal
+  // C R E A T E
+
+  // R E A D ALL
+
+  // R E A D BY I D
+
+  // U P D A T E
+
+  // D E L E T E
 
   //CRUD for Items in a meal
 }
