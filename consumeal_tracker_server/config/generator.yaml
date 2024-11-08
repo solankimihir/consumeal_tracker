@@ -1,0 +1,3 @@
+type: server
+
+client_package_path: ../consumeal_tracker_client
