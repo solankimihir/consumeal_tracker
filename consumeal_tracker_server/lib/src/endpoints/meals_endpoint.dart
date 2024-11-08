@@ -23,7 +23,7 @@ class MealsEndpoint extends Endpoint {
 
   // D E L E T E
   //TODO: Put in safety checks here to confirm that
-  //      no record is using this item master
+  //      no record is using this item master before deletion
   Future<MasterItems> deleteMasterItem(
           Session session, MasterItems itemToBeDeleted) async =>
       await MasterItems.db.deleteRow(session, itemToBeDeleted);
