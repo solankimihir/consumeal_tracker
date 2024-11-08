@@ -5,6 +5,9 @@
 # Conventional directory for build outputs
 build/
 
+#migrations directory
+migrations/
+migrations/migration_registry.txt
 # Directory created by dartdoc
 doc/api/
 

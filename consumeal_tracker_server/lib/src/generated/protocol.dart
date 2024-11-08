@@ -16,6 +16,8 @@ import 'example.dart' as _i3;
 import 'items_in_a_meal.dart' as _i4;
 import 'master_items.dart' as _i5;
 import 'meals.dart' as _i6;
+import 'package:consumeal_tracker_server/src/generated/master_items.dart'
+    as _i7;
 export 'example.dart';
 export 'items_in_a_meal.dart';
 export 'master_items.dart';
@@ -259,6 +261,10 @@ class Protocol extends _i1.SerializationManagerServer {
     }
     if (t == List<String>) {
       return (data as List).map((e) => deserialize<String>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<_i7.MasterItems>) {
+      return (data as List).map((e) => deserialize<_i7.MasterItems>(e)).toList()
           as dynamic;
     }
     try {

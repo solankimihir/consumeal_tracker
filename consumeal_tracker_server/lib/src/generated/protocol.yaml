@@ -1,2 +1,8 @@
 example:
   - hello:
+meals:
+  - addMasterItems:
+  - readAllMasterItems:
+  - readMasterItem:
+  - updateMasterItem:
+  - deleteMasterItem:
