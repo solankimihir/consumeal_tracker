@@ -1,0 +1,43 @@
+{
+  "actions": [
+    {
+      "type": "alterTable",
+      "alterTable": {
+        "name": "meals",
+        "schema": "public",
+        "addColumns": [],
+        "deleteColumns": [
+          "tag"
+        ],
+        "modifyColumns": [],
+        "addIndexes": [],
+        "deleteIndexes": [],
+        "addForeignKeys": [],
+        "deleteForeignKeys": [],
+        "warnings": [
+          {
+            "type": "columnDropped",
+            "message": "Column \"tag\" of table \"meals\" will be dropped.",
+            "table": "meals",
+            "columns": [
+              "tag"
+            ],
+            "destrucive": true
+          }
+        ]
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "type": "columnDropped",
+      "message": "Column \"tag\" of table \"meals\" will be dropped.",
+      "table": "meals",
+      "columns": [
+        "tag"
+      ],
+      "destrucive": true
+    }
+  ],
+  "migrationApiVersion": 1
+}

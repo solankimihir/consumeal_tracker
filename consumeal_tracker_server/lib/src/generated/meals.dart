@@ -19,7 +19,6 @@ abstract class Meals implements _i1.TableRow, _i1.ProtocolSerialization {
     required this.datetimestamp,
     required this.name,
     required this.remarks,
-    required this.tag,
   });
 
   factory Meals({
@@ -27,7 +26,6 @@ abstract class Meals implements _i1.TableRow, _i1.ProtocolSerialization {
     required DateTime datetimestamp,
     required String name,
     required String remarks,
-    required List<String> tag,
   }) = _MealsImpl;
 
   factory Meals.fromJson(Map<String, dynamic> jsonSerialization) {
@@ -37,7 +35,6 @@ abstract class Meals implements _i1.TableRow, _i1.ProtocolSerialization {
           jsonSerialization['datetimestamp']),
       name: jsonSerialization['name'] as String,
       remarks: jsonSerialization['remarks'] as String,
-      tag: (jsonSerialization['tag'] as List).map((e) => e as String).toList(),
     );
   }
 
@@ -54,8 +51,6 @@ abstract class Meals implements _i1.TableRow, _i1.ProtocolSerialization {
 
   String remarks;
 
-  List<String> tag;
-
   @override
   _i1.Table get table => t;
 
@@ -64,7 +59,6 @@ abstract class Meals implements _i1.TableRow, _i1.ProtocolSerialization {
     DateTime? datetimestamp,
     String? name,
     String? remarks,
-    List<String>? tag,
   });
   @override
   Map<String, dynamic> toJson() {
@@ -73,7 +67,6 @@ abstract class Meals implements _i1.TableRow, _i1.ProtocolSerialization {
       'datetimestamp': datetimestamp.toJson(),
       'name': name,
       'remarks': remarks,
-      'tag': tag.toJson(),
     };
   }
 
@@ -84,7 +77,6 @@ abstract class Meals implements _i1.TableRow, _i1.ProtocolSerialization {
       'datetimestamp': datetimestamp.toJson(),
       'name': name,
       'remarks': remarks,
-      'tag': tag.toJson(),
     };
   }
 
@@ -126,13 +118,11 @@ class _MealsImpl extends Meals {
     required DateTime datetimestamp,
     required String name,
     required String remarks,
-    required List<String> tag,
   }) : super._(
           id: id,
           datetimestamp: datetimestamp,
           name: name,
           remarks: remarks,
-          tag: tag,
         );
 
   @override
@@ -141,14 +131,12 @@ class _MealsImpl extends Meals {
     DateTime? datetimestamp,
     String? name,
     String? remarks,
-    List<String>? tag,
   }) {
     return Meals(
       id: id is int? ? id : this.id,
       datetimestamp: datetimestamp ?? this.datetimestamp,
       name: name ?? this.name,
       remarks: remarks ?? this.remarks,
-      tag: tag ?? this.tag.map((e0) => e0).toList(),
     );
   }
 }
@@ -167,10 +155,6 @@ class MealsTable extends _i1.Table {
       'remarks',
       this,
     );
-    tag = _i1.ColumnSerializable(
-      'tag',
-      this,
-    );
   }
 
   late final _i1.ColumnDateTime datetimestamp;
@@ -179,15 +163,12 @@ class MealsTable extends _i1.Table {
 
   late final _i1.ColumnString remarks;
 
-  late final _i1.ColumnSerializable tag;
-
   @override
   List<_i1.Column> get columns => [
         id,
         datetimestamp,
         name,
         remarks,
-        tag,
       ];
 }
 

@@ -195,12 +195,6 @@ class Protocol extends _i1.SerializationManagerServer {
           isNullable: false,
           dartType: 'String',
         ),
-        _i2.ColumnDefinition(
-          name: 'tag',
-          columnType: _i2.ColumnType.json,
-          isNullable: false,
-          dartType: 'List<String>',
-        ),
       ],
       foreignKeys: [],
       indexes: [
@@ -252,10 +246,6 @@ class Protocol extends _i1.SerializationManagerServer {
     }
     if (t == _i1.getType<_i6.Meals?>()) {
       return (data != null ? _i6.Meals.fromJson(data) : null) as T;
-    }
-    if (t == List<String>) {
-      return (data as List).map((e) => deserialize<String>(e)).toList()
-          as dynamic;
     }
     if (t == List<_i7.MasterItems>) {
       return (data as List).map((e) => deserialize<_i7.MasterItems>(e)).toList()
