@@ -22,7 +22,6 @@ abstract class ItemsInAMeal implements _i1.SerializableModel {
     required this.quantity,
     required this.remarks,
     required this.calories,
-    required this.tags,
   });
 
   factory ItemsInAMeal({
@@ -34,7 +33,6 @@ abstract class ItemsInAMeal implements _i1.SerializableModel {
     required double quantity,
     required String remarks,
     required int calories,
-    required List<String> tags,
   }) = _ItemsInAMealImpl;
 
   factory ItemsInAMeal.fromJson(Map<String, dynamic> jsonSerialization) {
@@ -53,8 +51,6 @@ abstract class ItemsInAMeal implements _i1.SerializableModel {
       quantity: (jsonSerialization['quantity'] as num).toDouble(),
       remarks: jsonSerialization['remarks'] as String,
       calories: jsonSerialization['calories'] as int,
-      tags:
-          (jsonSerialization['tags'] as List).map((e) => e as String).toList(),
     );
   }
 
@@ -77,8 +73,6 @@ abstract class ItemsInAMeal implements _i1.SerializableModel {
 
   int calories;
 
-  List<String> tags;
-
   ItemsInAMeal copyWith({
     int? id,
     int? mealIDId,
@@ -88,7 +82,6 @@ abstract class ItemsInAMeal implements _i1.SerializableModel {
     double? quantity,
     String? remarks,
     int? calories,
-    List<String>? tags,
   });
   @override
   Map<String, dynamic> toJson() {
@@ -101,7 +94,6 @@ abstract class ItemsInAMeal implements _i1.SerializableModel {
       'quantity': quantity,
       'remarks': remarks,
       'calories': calories,
-      'tags': tags.toJson(),
     };
   }
 
@@ -123,7 +115,6 @@ class _ItemsInAMealImpl extends ItemsInAMeal {
     required double quantity,
     required String remarks,
     required int calories,
-    required List<String> tags,
   }) : super._(
           id: id,
           mealIDId: mealIDId,
@@ -133,7 +124,6 @@ class _ItemsInAMealImpl extends ItemsInAMeal {
           quantity: quantity,
           remarks: remarks,
           calories: calories,
-          tags: tags,
         );
 
   @override
@@ -146,7 +136,6 @@ class _ItemsInAMealImpl extends ItemsInAMeal {
     double? quantity,
     String? remarks,
     int? calories,
-    List<String>? tags,
   }) {
     return ItemsInAMeal(
       id: id is int? ? id : this.id,
@@ -157,7 +146,6 @@ class _ItemsInAMealImpl extends ItemsInAMeal {
       quantity: quantity ?? this.quantity,
       remarks: remarks ?? this.remarks,
       calories: calories ?? this.calories,
-      tags: tags ?? this.tags.map((e0) => e0).toList(),
     );
   }
 }

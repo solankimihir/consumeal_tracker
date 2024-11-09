@@ -8,4 +8,4 @@ fields:
     quantity: double
     remarks: String
     calories: int
-    tags: List<String>
+   # tags: List<String>

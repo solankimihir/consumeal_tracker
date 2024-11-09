@@ -1,6 +1,5 @@
 import 'package:consumeal_tracker_flutter/components/floating_action_button_for_app.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

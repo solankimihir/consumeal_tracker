@@ -74,12 +74,6 @@ class Protocol extends _i1.SerializationManagerServer {
           isNullable: false,
           dartType: 'int',
         ),
-        _i2.ColumnDefinition(
-          name: 'tags',
-          columnType: _i2.ColumnType.json,
-          isNullable: false,
-          dartType: 'List<String>',
-        ),
       ],
       foreignKeys: [
         _i2.ForeignKeyDefinition(

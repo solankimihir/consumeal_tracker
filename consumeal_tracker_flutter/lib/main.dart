@@ -2,6 +2,7 @@ import 'package:consumeal_tracker_client/consumeal_tracker_client.dart';
 import 'package:consumeal_tracker_flutter/pages/homepage.dart';
 import 'package:consumeal_tracker_flutter/pages/add_items_in_master.dart';
 import 'package:consumeal_tracker_flutter/pages/add_meal.dart';
+import 'package:consumeal_tracker_flutter/pages/view_items_master.dart';
 import 'package:flutter/material.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
 
@@ -10,7 +11,7 @@ import 'package:serverpod_flutter/serverpod_flutter.dart';
 // The client is set up to connect to a Serverpod running on a local server on
 // the default port. You will need to modify this to connect to staging or
 // production servers.
-var client = Client('http://$localhost:8080/')
+var client = Client('http://192.168.29.228:8080/')
   ..connectivityMonitor = FlutterConnectivityMonitor();
 
 void main() {
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/homepage': (context) => const HomePage(),
         '/addMeal': (context) => const AddMeal(),
         '/addItemsInMaster': (context) => const AddItemsInMaster(),
+        '/viewMasterItems': (context) => const ViewItemsMaster(),
       },
       title: 'C O N S U M E A L     T R A C K E R',
       home: const HomePage(),

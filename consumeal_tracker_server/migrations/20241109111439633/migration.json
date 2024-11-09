@@ -1,0 +1,43 @@
+{
+  "actions": [
+    {
+      "type": "alterTable",
+      "alterTable": {
+        "name": "items_in_a_meal",
+        "schema": "public",
+        "addColumns": [],
+        "deleteColumns": [
+          "tags"
+        ],
+        "modifyColumns": [],
+        "addIndexes": [],
+        "deleteIndexes": [],
+        "addForeignKeys": [],
+        "deleteForeignKeys": [],
+        "warnings": [
+          {
+            "type": "columnDropped",
+            "message": "Column \"tags\" of table \"items_in_a_meal\" will be dropped.",
+            "table": "items_in_a_meal",
+            "columns": [
+              "tags"
+            ],
+            "destrucive": true
+          }
+        ]
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "type": "columnDropped",
+      "message": "Column \"tags\" of table \"items_in_a_meal\" will be dropped.",
+      "table": "items_in_a_meal",
+      "columns": [
+        "tags"
+      ],
+      "destrucive": true
+    }
+  ],
+  "migrationApiVersion": 1
+}
