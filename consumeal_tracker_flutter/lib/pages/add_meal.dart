@@ -1,6 +1,6 @@
 import 'package:consumeal_tracker_client/consumeal_tracker_client.dart';
+import 'package:consumeal_tracker_flutter/components/database_operations.dart';
 import 'package:flutter/material.dart';
-import 'package:consumeal_tracker_flutter/main.dart';
 
 class AddMeal extends StatefulWidget {
   const AddMeal({super.key});
@@ -11,35 +11,34 @@ class AddMeal extends StatefulWidget {
 
 class _AddMealState extends State<AddMeal> {
   //Text editing controllers for Meal Object
+
   var mealDateTime = TextEditingController();
   var mealName = TextEditingController();
   var mealRemarks = TextEditingController();
-
-  void saveMeal() {
-    //Creates a database entry for "meals"
-    Meals meal = Meals(
-        datetimestamp: DateTime.now(),
-        name: mealName.text,
-        remarks: mealRemarks.text);
-
-        client.meals.
-  }
-
-  void saveItemsInMeal(
-      int mealId, int itemID, double quantity, String remarks, int calories) {
-    //creates a database entry for one item in a meal
-    ItemsInAMeal item = ItemsInAMeal(
-        mealIDId: mealId,
-        itemIDId: itemID,
-        quantity: quantity,
-        remarks: remarks,
-        calories: calories);
-  }
 
   //Text editing controllers for Items in a Meal objects
   var itemQuantity = TextEditingController();
   var itemRemarks = TextEditingController();
   var itemCalories = TextEditingController();
+
+  late List<ItemsInAMeal> itemsInAmeal;
+  void onAddMeal() {
+    //sanity checks:
+    //TODO: Sanity checks for Items in a meal
+
+    if (mealName.text.isEmpty) {
+      //TODO : Add a snack bar notification
+      return;
+    }
+
+    //Add Meal to DB
+    DatabaseOperations().saveMeal(mealName.text, mealRemarks.text);
+    // Add each item to DB
+    for (var items in itemsInAmeal) {
+      DatabaseOperations().saveItemsInMeal(items.mealIDId, items.itemIDId,
+          items.quantity, items.remarks, items.calories);
+    }
+  }
 
   @override
   void dispose() {
