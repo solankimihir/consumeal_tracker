@@ -12,7 +12,10 @@
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
 import 'dart:async' as _i2;
 import 'package:consumeal_tracker_client/src/protocol/master_items.dart' as _i3;
-import 'protocol.dart' as _i4;
+import 'package:consumeal_tracker_client/src/protocol/meals.dart' as _i4;
+import 'package:consumeal_tracker_client/src/protocol/items_in_a_meal.dart'
+    as _i5;
+import 'protocol.dart' as _i6;
 
 /// {@category Endpoint}
 class EndpointExample extends _i1.EndpointRef {
@@ -70,6 +73,69 @@ class EndpointMeals extends _i1.EndpointRef {
         'deleteMasterItem',
         {'itemToBeDeleted': itemToBeDeleted},
       );
+
+  _i2.Future<_i4.Meals> addMeals(_i4.Meals meal) =>
+      caller.callServerEndpoint<_i4.Meals>(
+        'meals',
+        'addMeals',
+        {'meal': meal},
+      );
+
+  _i2.Future<List<_i4.Meals>> readAllMeals() =>
+      caller.callServerEndpoint<List<_i4.Meals>>(
+        'meals',
+        'readAllMeals',
+        {},
+      );
+
+  _i2.Future<_i4.Meals?> readMeal(int? id) =>
+      caller.callServerEndpoint<_i4.Meals?>(
+        'meals',
+        'readMeal',
+        {'id': id},
+      );
+
+  _i2.Future<_i4.Meals> updateMeal(_i4.Meals meal) =>
+      caller.callServerEndpoint<_i4.Meals>(
+        'meals',
+        'updateMeal',
+        {'meal': meal},
+      );
+
+  _i2.Future<_i4.Meals> deleteMeal(_i4.Meals meal) =>
+      caller.callServerEndpoint<_i4.Meals>(
+        'meals',
+        'deleteMeal',
+        {'meal': meal},
+      );
+
+  _i2.Future<_i5.ItemsInAMeal> addItems(_i5.ItemsInAMeal item) =>
+      caller.callServerEndpoint<_i5.ItemsInAMeal>(
+        'meals',
+        'addItems',
+        {'item': item},
+      );
+
+  _i2.Future<List<_i5.ItemsInAMeal>> readAllItemsInAMeal(int id) =>
+      caller.callServerEndpoint<List<_i5.ItemsInAMeal>>(
+        'meals',
+        'readAllItemsInAMeal',
+        {'id': id},
+      );
+
+  _i2.Future<_i5.ItemsInAMeal> updateItemsInAMeal(_i5.ItemsInAMeal items) =>
+      caller.callServerEndpoint<_i5.ItemsInAMeal>(
+        'meals',
+        'updateItemsInAMeal',
+        {'items': items},
+      );
+
+  _i2.Future<List<_i5.ItemsInAMeal>> deleteItemInAMeal(int id) =>
+      caller.callServerEndpoint<List<_i5.ItemsInAMeal>>(
+        'meals',
+        'deleteItemInAMeal',
+        {'id': id},
+      );
 }
 
 class Client extends _i1.ServerpodClientShared {
@@ -88,7 +154,7 @@ class Client extends _i1.ServerpodClientShared {
     bool? disconnectStreamsOnLostInternetConnection,
   }) : super(
           host,
-          _i4.Protocol(),
+          _i6.Protocol(),
           securityContext: securityContext,
           authenticationKeyManager: authenticationKeyManager,
           streamingConnectionTimeout: streamingConnectionTimeout,

@@ -6,3 +6,12 @@ meals:
   - readMasterItem:
   - updateMasterItem:
   - deleteMasterItem:
+  - addMeals:
+  - readAllMeals:
+  - readMeal:
+  - updateMeal:
+  - deleteMeal:
+  - addItems:
+  - readAllItemsInAMeal:
+  - updateItemsInAMeal:
+  - deleteItemInAMeal:

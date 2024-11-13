@@ -14,6 +14,9 @@ import '../endpoints/example_endpoint.dart' as _i2;
 import '../endpoints/meals_endpoint.dart' as _i3;
 import 'package:consumeal_tracker_server/src/generated/master_items.dart'
     as _i4;
+import 'package:consumeal_tracker_server/src/generated/meals.dart' as _i5;
+import 'package:consumeal_tracker_server/src/generated/items_in_a_meal.dart'
+    as _i6;
 
 class Endpoints extends _i1.EndpointDispatch {
   @override
@@ -140,6 +143,159 @@ class Endpoints extends _i1.EndpointDispatch {
               (endpoints['meals'] as _i3.MealsEndpoint).deleteMasterItem(
             session,
             params['itemToBeDeleted'],
+          ),
+        ),
+        'addMeals': _i1.MethodConnector(
+          name: 'addMeals',
+          params: {
+            'meal': _i1.ParameterDescription(
+              name: 'meal',
+              type: _i1.getType<_i5.Meals>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['meals'] as _i3.MealsEndpoint).addMeals(
+            session,
+            params['meal'],
+          ),
+        ),
+        'readAllMeals': _i1.MethodConnector(
+          name: 'readAllMeals',
+          params: {},
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['meals'] as _i3.MealsEndpoint).readAllMeals(session),
+        ),
+        'readMeal': _i1.MethodConnector(
+          name: 'readMeal',
+          params: {
+            'id': _i1.ParameterDescription(
+              name: 'id',
+              type: _i1.getType<int?>(),
+              nullable: true,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['meals'] as _i3.MealsEndpoint).readMeal(
+            session,
+            params['id'],
+          ),
+        ),
+        'updateMeal': _i1.MethodConnector(
+          name: 'updateMeal',
+          params: {
+            'meal': _i1.ParameterDescription(
+              name: 'meal',
+              type: _i1.getType<_i5.Meals>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['meals'] as _i3.MealsEndpoint).updateMeal(
+            session,
+            params['meal'],
+          ),
+        ),
+        'deleteMeal': _i1.MethodConnector(
+          name: 'deleteMeal',
+          params: {
+            'meal': _i1.ParameterDescription(
+              name: 'meal',
+              type: _i1.getType<_i5.Meals>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['meals'] as _i3.MealsEndpoint).deleteMeal(
+            session,
+            params['meal'],
+          ),
+        ),
+        'addItems': _i1.MethodConnector(
+          name: 'addItems',
+          params: {
+            'item': _i1.ParameterDescription(
+              name: 'item',
+              type: _i1.getType<_i6.ItemsInAMeal>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['meals'] as _i3.MealsEndpoint).addItems(
+            session,
+            params['item'],
+          ),
+        ),
+        'readAllItemsInAMeal': _i1.MethodConnector(
+          name: 'readAllItemsInAMeal',
+          params: {
+            'id': _i1.ParameterDescription(
+              name: 'id',
+              type: _i1.getType<int>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['meals'] as _i3.MealsEndpoint).readAllItemsInAMeal(
+            session,
+            params['id'],
+          ),
+        ),
+        'updateItemsInAMeal': _i1.MethodConnector(
+          name: 'updateItemsInAMeal',
+          params: {
+            'items': _i1.ParameterDescription(
+              name: 'items',
+              type: _i1.getType<_i6.ItemsInAMeal>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['meals'] as _i3.MealsEndpoint).updateItemsInAMeal(
+            session,
+            params['items'],
+          ),
+        ),
+        'deleteItemInAMeal': _i1.MethodConnector(
+          name: 'deleteItemInAMeal',
+          params: {
+            'id': _i1.ParameterDescription(
+              name: 'id',
+              type: _i1.getType<int>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['meals'] as _i3.MealsEndpoint).deleteItemInAMeal(
+            session,
+            params['id'],
           ),
         ),
       },

@@ -1,5 +1,6 @@
 import 'package:consumeal_tracker_client/consumeal_tracker_client.dart';
 import 'package:flutter/material.dart';
+import 'package:consumeal_tracker_flutter/main.dart';
 
 class AddMeal extends StatefulWidget {
   const AddMeal({super.key});
@@ -15,10 +16,24 @@ class _AddMealState extends State<AddMeal> {
   var mealRemarks = TextEditingController();
 
   void saveMeal() {
+    //Creates a database entry for "meals"
     Meals meal = Meals(
         datetimestamp: DateTime.now(),
         name: mealName.text,
         remarks: mealRemarks.text);
+
+        client.meals.
+  }
+
+  void saveItemsInMeal(
+      int mealId, int itemID, double quantity, String remarks, int calories) {
+    //creates a database entry for one item in a meal
+    ItemsInAMeal item = ItemsInAMeal(
+        mealIDId: mealId,
+        itemIDId: itemID,
+        quantity: quantity,
+        remarks: remarks,
+        calories: calories);
   }
 
   //Text editing controllers for Items in a Meal objects
@@ -52,7 +67,7 @@ class _AddMealState extends State<AddMeal> {
         body: Padding(
           padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
           child: Column(
-            children: [Text("Add Meal")],
+            children: [],
           ),
         ));
   }
